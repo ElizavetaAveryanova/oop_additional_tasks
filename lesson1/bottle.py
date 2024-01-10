@@ -10,18 +10,16 @@
 - Белую 0.3
 - Черную 1.0
 """
-
-
 class Bottle:
 
-    def __init__(self, color, volume):
-        ...
+    def __init__(self, color: str, volume: float):
+        self.color = color
+        self.volume = volume
 
 
 bottle_1 = Bottle("Красная", 0.7)
-bottle_2 = ...
-bottle_3 = ...
-
+bottle_2 = Bottle("Белая", 0.3)
+bottle_3 = Bottle("Черная", 1.0)
 
 # код для проверки 
 print(bottle_1.color, bottle_1.volume)  # Красная 0.7
