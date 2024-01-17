@@ -8,8 +8,6 @@
 - is_square(width, height): статический метод, принимающий ширину и высоту прямоугольника и возвращающий True,
 если это квадрат, и False в противном случае
 """
-from math import sqrt
-
 class Rectangle:
     def __init__(self, width, height):
         """ конструктор, принимающий ширину и высоту прямоугольника """
