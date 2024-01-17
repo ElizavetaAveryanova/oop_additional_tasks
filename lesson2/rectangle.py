@@ -34,7 +34,7 @@ class Rectangle:
     @staticmethod
     def is_square(width, height):
         """ статический метод, принимающий ширину и высоту прямоугольника и возвращающий True,
-если это квадрат, и False в противном случае """
+        если это квадрат, и False в противном случае """
         if width == height:
             return True
         else:
