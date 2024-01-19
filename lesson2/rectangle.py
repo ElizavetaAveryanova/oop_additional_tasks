@@ -10,28 +10,29 @@
 """
 class Rectangle:
     def __init__(self, width, height):
-        """ конструктор, принимающий ширину и высоту прямоугольника """
+        """ Конструктор, принимающий ширину и высоту прямоугольника """
         self.width = width
         self.height = height
 
     def area(self):
-        """ метод, возвращающий площадь прямоугольника """
+        """ Метод, возвращающий площадь прямоугольника """
         return self.width * self.height
 
     def perimeter(self):
-        """ метод, возвращающий периметр прямоугольника """
+        """ Метод, возвращающий периметр прямоугольника """
         return (self.width + self.height) * 2
 
     @classmethod
     def from_diagonal(cls, diagonal, aspect_ratio):
-        """ класс-метод, принимающий диагональ прямоугольника и соотношение сторон и возвращающий объект класса Rectangle """
+        """ Класс-метод, принимающий диагональ прямоугольника и соотношение сторон и
+        возвращающий объект класса Rectangle """
         height = (diagonal ** 2 / (aspect_ratio ** 2 + 1)) ** 0.5
         width = aspect_ratio * height
         return cls(height, width)
 
     @staticmethod
     def is_square(width, height):
-        """ статический метод, принимающий ширину и высоту прямоугольника и возвращающий True,
+        """ Статический метод, принимающий ширину и высоту прямоугольника и возвращающий True,
         если это квадрат, и False в противном случае """
         if width == height:
             return True

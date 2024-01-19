@@ -14,14 +14,18 @@ from datetime import datetime
 class Person:
 
     def __init__(self, name, age):
+        """Конструктор, принимающий имя и возраст человека"""
         self.name = name
         self.age = age
 
     def display(self):
+        """Метод, выводящий на экран имя и возраст человека"""
         print(f'{self.name} is {self.age} years old')
 
     @classmethod
     def from_birth_year(cls, name, birth_year):
+        """Класс-метод, принимающий имя и год рождения человека и
+        возвращающий объект класса Person"""
         cls.name = name
         cls.birth_year = birth_year
         age = datetime.today().year - birth_year
@@ -29,6 +33,8 @@ class Person:
 
     @staticmethod
     def is_adult(age):
+        """Статический метод, принимающий возраст человека и возвращающий True,
+        если он старше 18 лет, и False в противном случае"""
         if age > 18:
             return True
         else:

@@ -6,9 +6,18 @@
 принимающую сообщение и записывающую его в файл.
 """
 
-
 class Logger:
-    pass
+    
+    def __init__(self, filename):
+        """Конструктор, принимающий имя файла, в который будет производиться запись логов"""
+        self.filename = filename
+
+    def __call__(self, message):
+        """Магический метод, который позволяет использовать объект класса Logger как функцию,
+        принимающую сообщение и записывающую его в файл."""
+        self.message = message
+        with open(self.filename, "w") as file:
+            file.write(self.message)
 
 
 # код для проверки 

@@ -5,14 +5,17 @@
 - __exit__(self, exc_type, exc_val, exc_tb): магический метод, который останавливает таймер
 и выводит время выполнения блока кода.
 """
-
+import time
 
 class Timer:
-    pass
+    def __enter__(self):
+        self.start_time = time.time()
+
 
 
 with Timer() as timer:
-    # блок кода
+
+
 
 
 # код для проверки 

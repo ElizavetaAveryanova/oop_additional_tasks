@@ -13,21 +13,26 @@
 
 class BankAccount:
     def __init__(self, balance):
+        """Конструктор, принимающий начальный баланс счета"""
         self.__balance = balance
 
     @property
     def balance(self):
+        """Свойство, которое возвращает текущий баланс счета"""
         return self.__balance
 
     def deposit(self, amount):
+        """Метод, который позволяет внести деньги на счет"""
         self.__balance += amount
         return self.__balance
 
     def withdraw(self, amount):
+        """Метод, который позволяет снять деньги со счета"""
         self.__balance -= amount
         return self.__balance
 
     def close(self):
+        """Метод, который закрывает счет и возвращает оставшиеся на нем деньги"""
         self.__balance -= self.__balance
         return self.__balance
 
