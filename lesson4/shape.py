@@ -17,7 +17,37 @@
 
 
 class Shape:
-    pass
+    def __init__(self, name):
+        """Конструктор, принимающий имя геометрической фигуры"""
+        self.name = name
+
+    def area(self):
+        """Метод, который вычисляет площадь геометрической фигуры"""
+        return 0
+
+class Rectangle(Shape):
+
+    def __init__(self, name, width, height):
+        """Конструктор, принимающий имя прямоугольника, ширину и высоту"""
+        super().__init__(name)
+        self.width = width
+        self.height = height
+
+    def area(self):
+        """Метод, который вычисляет площадь прямоугольника"""
+        return int (self.width * self.height)
+
+class Triangle(Shape):
+
+    def __init__(self, name, base, height):
+        super().__init__(name)
+        self.base = base
+        self.height = height
+
+    def area(self):
+        """Метод, который вычисляет площадь треугольника"""
+        return int(self.base * self.height / 2)
+
 
 
 # код для проверки 
