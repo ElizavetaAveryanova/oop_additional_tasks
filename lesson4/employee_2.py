@@ -6,32 +6,27 @@
 class Employee:
     def __init__(self, pay):
         self.pay = pay
-
     def __add__(self, other):
-        if isinstance(other, (int, float)) and not isinstance(other, Client):
+        if isinstance(other, (int, float)):
             return self.pay + other
-        elif isinstance(other, Employee) and not isinstance(other, Client):
+        elif isinstance(other, Employee) and issubclass(type(other), Employee):
             return self.pay + other.pay
         else:
             raise TypeError("Сложение невозможно")
-
     def __radd__(self, other):
-        if isinstance(other, (int, float)) and not isinstance(other, Client):
+        if isinstance(other, (int, float)):
             return other + self.pay
-        elif isinstance(other, Employee) and not isinstance(other, Client):
+        elif isinstance(other, Employee) and issubclass(type(other), Employee):
             return other.pay + self.pay
         else:
             raise TypeError("Сложение невозможно")
-
 
 class Client:
     def __init__(self, pay):
         self.pay = pay
 
-
 class Developer(Employee):
     pass
-
 
 class Manager(Employee):
     pass
