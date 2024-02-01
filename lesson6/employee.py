@@ -13,9 +13,19 @@
 Вызванные исключения должны пояснять в чем именно произошла ошибка.
 """
 
+class Person:
+    def __init__(self, name, age, salary):
+        self.name = name
+        self.age = age
+        self.salary = salary
 
-class Employee:
-    pass
+class Employee(Person):
+    def __init__(self, name, age, salary):
+        if age < 18 or age > 127:
+            raise ValueError('Возраст должен быть не меньше 18 и не больше 127')
+        if salary < 16242:
+            raise ValueError('Оплата труда не может быть меньше 16242')
+        super().__init__(name, age, salary)
 
 
 # код для проверки

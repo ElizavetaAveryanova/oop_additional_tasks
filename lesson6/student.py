@@ -11,9 +11,16 @@
 
 
 class Student:
+    def __init__(self, name, course, grades):
+        self.name = name
+        self.course = course
+        self.grades = grades
 
-    def __init__(...):
-        ...
+    def avg_rate(self):
+        if len(self.grades) == 0:
+            print(0.0)
+        else:
+            print(sum(self.grades) / len(self.grades))
 
 
 # код для проверки
